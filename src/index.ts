@@ -13,7 +13,7 @@ const names = persons.map((person) => person.name);
 //igy is haznalhato lenne mert lent megirtam kulon functionben
 //const names = persons.map(converterFunction);
 
-console.log(names);
+//console.log(names);
 
 //implement map function
 
@@ -71,4 +71,30 @@ const onlyNamesHTML = map(
   (person) => `<p>${person.name} (${person.age})</p>`
 );
 
-console.log(onlyNamesHTML);
+//console.log(onlyNamesHTML);
+
+//test shallow vs deep copy
+
+//shallow copy
+const books = [
+  { title: "Harry Potter 1" },
+  { title: "Harry Potter 2" },
+  { title: "Harry Potter 3" },
+];
+
+//const newBooks = books.map((book) => book);
+
+//newBooks.push({ title: "Harry Potter 4" });
+//newBooks[0].title = "EMBER";
+//console.log(books);
+//console.log(newBooks);
+
+//deep copy
+const newBooks = books.map((book) => {
+  return { ...book };
+});
+newBooks.push({ title: "Harry Potter 4" });
+newBooks[0].title = "EMBER";
+
+console.log(books);
+console.log(newBooks);
